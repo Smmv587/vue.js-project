@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import App from './App';
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 import goods from './components/goods/goods'; // 可省略.vue
 import ratings from './components/ratings/ratings';
 import seller from './components/seller/seller';
 
 Vue.use(VueRouter);
+Vue.use(VueResource);
 
 // 路由器需要根组件
 var app = Vue.extend(App);

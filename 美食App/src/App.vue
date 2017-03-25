@@ -19,6 +19,18 @@
 <script>
   import header from './components/header/header';
   export default {
+     data () {
+      return {
+        seller: {}
+      };
+     },
+     created(){
+        this.$http.get('/api/seller').then(response => {
+          this.someData = response.body;
+          }, response => {
+        });
+      }
+     },
     components: {
       'v-header': header
     }
