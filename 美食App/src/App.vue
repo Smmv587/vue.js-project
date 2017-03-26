@@ -1,6 +1,6 @@
 <template>
   <div>
-   <v-header></v-header>
+   <v-header v-bind:seller="seller"></v-header>
    <div class="table">
       <div class="table-item">
         <a v-link="{path:'/goods'}">商品</a>
@@ -18,19 +18,24 @@
 
 <script>
   import header from './components/header/header';
+  const ERR_OK = 0; // 错误代码，在created()中会用到
   export default {
-     data () {
+    data () {
       return {
         seller: {}
       };
-     },
-     created(){
-        this.$http.get('/api/seller').then(response => {
-          this.someData = response.body;
-          }, response => {
-        });
-      }
-     },
+    },
+
+    created () {
+      this.$http.get('/api/seller').then(response => {
+        response = response.body;
+        if (response.errno === ERR_OK) {
+          this.seller = response.data;
+          console.log(response);
+        };
+      });
+    },
+
     components: {
       'v-header': header
     }

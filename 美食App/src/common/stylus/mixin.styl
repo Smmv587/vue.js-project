@@ -1,0 +1,6 @@
+//这是图片的媒体查询功能，可以随时引用，复用
+
+bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
