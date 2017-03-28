@@ -11,6 +11,7 @@
       <div class="table-item">
         <a v-link="{path:'/seller'}">商家</a>
       </div>
+      
    </div>
    <router-view></router-view>
   </div>
@@ -31,7 +32,6 @@
         response = response.body;
         if (response.errno === ERR_OK) {
           this.seller = response.data;
-          console.log(response);
         };
       });
     },

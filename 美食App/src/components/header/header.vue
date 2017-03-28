@@ -23,7 +23,8 @@
       </div>
     </div>
     <div class="bulletin-wrapper">
-    	
+      <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span>
+      <i class="icon-keyboard_arrow_right"></i>
     </div>
   </div>
 </template>
@@ -46,8 +47,9 @@
 
   .header
     color: #fff
-    background: #010
+    background: #555
     .content-wrapper
+      position: relative
       padding: 24px 12px 18px 24px
       font-size: 0
       .avatar
@@ -83,7 +85,6 @@
             display: inline-block
             width: 12px
             height: 12px
-            margin-right: 4px
             background-size: 12px 12px
             background-repeat: no-repeat
             &.decrease
@@ -104,16 +105,39 @@
         position: absolute
         right: 12px
         bottom: 14px
-        padding: 0 8px
+        padding: 0 10px
         height: 24px
         line-height: 24px
-        border-radius: 14px
+        border-radius: 12px
         background: rgba(0, 0, 0, 0.2)
         text-align: center
         .count
           font-size: 10px
         .icon-keyboard_arrow_right
-          line-height: 24px
-          font-size: 10px
-          margin-left: 2px
+          font-size: 10px 
+    .bulletin-wrapper
+      position: relative
+      height: 28px
+      line-height: 28px
+      padding: 0 22px 0 12px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      background: rgba(7, 17, 27, 0.2)
+      .bulletin-title
+        display: inline-block
+        width: 22px
+        height: 12px
+        bg-image('bulletin')
+        background-size: 22px 12px
+        background-repeat: no-repeat
+      .bulletin-text
+        margin: 0 4px
+        font-size: 10px
+        vertical-align: top
+      .icon-keyboard_arrow_right
+        position: absolute
+        font-size: 10px
+        right: 12px
+        top: 8px
 </style>
